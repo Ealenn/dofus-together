@@ -3,28 +3,39 @@
   <head>
     <meta charset="utf-8" />
     <title>Dofus Together</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,typography,aspect-ratio,line-clamp"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script>
+      tailwind.config = {
+        theme: {}
+      }
+    </script>
+    <style>
+      html { 
+        background: url('/static/background.jpg') no-repeat center center fixed; 
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+      }
+    </style>
   </head>
   <body>
-    <div>
-      <ul>
-        {{#each quests}}
-          <li>{{this.quest.Name}} - {{this.User.Pseudo}}</li>
-        {{/each}}
-      </ul>
-    </div>
-
-    <div>
-      <form action="/pool" method="post">
-        <p>
-          <label for="pseudo">Pseudo</label>
-          <input type="text" id="pseudo" />
-        </p>
-        <p>
-          <label for="quest">Quest</label>
-          <input type="text" id="quest" />
-        </p>
-        <button type="submit">Save</button>
-      </form>
+    <div class="bg-opacity-50 bg-white backdrop-blur-sm container mx-auto px-4 mt-8 p-12 rounded overflow-hidden shadow-lg">
+      <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">Dofus Together</div>
+        <p class="text-gray-700 text-base"></p>
+      </div>
+      <div class="px-6 pt-4 pb-2 content-center text-center">
+        <a href="/swagger" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center mr-8">
+          <i class="fa-solid fa-book fill-current w-4 h-4 mr-2"></i>
+          <span>API</span>
+        </a>
+        <a href="https://github.com/Ealenn/dofus-together" class="bg-gray-300 hover:bg-gray-400 text-gray-800 font-bold py-2 px-4 rounded inline-flex items-center">
+          <i class="fa-brands fa-github fill-current w-4 h-4 mr-2"></i>
+          <span>GitHub</span>
+        </a>
+      </div>
     </div>
   </body>
 </html>

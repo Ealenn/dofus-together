@@ -1,8 +1,7 @@
-import { Global, Module } from '@nestjs/common';
+import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Claim } from '../infrastructure/repositories/entities/claim';
 
-@Global()
 @Module({
   imports: [
     TypeOrmModule.forRoot({
